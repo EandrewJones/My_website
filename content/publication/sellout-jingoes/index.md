@@ -79,5 +79,3 @@ math = true
   # Options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
   focal_point = "Center"
 +++
-
-{{% staticref "files/Jones-2017-Sellout-Ministries-and-Jingoes" "newtab" %}}PDF{{% /staticref %}}
