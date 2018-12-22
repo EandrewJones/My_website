@@ -10,31 +10,30 @@ weight = 5
 # List your academic interests.
 [interests]
   interests = [
-    "Artificial Intelligence",
-    "Computational Linguistics",
-    "Information Retrieval"
+    "Chinese and East Asian Affairs",
+    "Politics of Misinformation",
+    "International Political Economy",
+    "Machine Learning & AI"
   ]
 
 # List your qualifications (such as academic degrees).
 [[education.courses]]
-  course = "PhD in Artificial Intelligence"
-  institution = "Stanford University"
-  year = 2012
+  course = "PhD in Government and Politics (in Progress)"
+  institution = "University of Maryland"
 
 [[education.courses]]
-  course = "MEng in Artificial Intelligence"
-  institution = "Massachusetts Institute of Technology"
-  year = 2009
-
+  course = "BA in International Relations"
+  institution = "Oakland University"
+  year = 2015
+  
 [[education.courses]]
-  course = "BSc in Artificial Intelligence"
-  institution = "Massachusetts Institute of Technology"
-  year = 2008
- 
+  course = "Certificate in Advanced Studies of Chinese Language"
+  institution = "Nanjing University"
+  year = 2014
 +++
 
-# Biography
+# Bio
 
-Lena Smith is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+I'm a PhD student in Government and Politics at the University of Maryland, College Park. I study the economic and media dimensions of China’s growing influence and reactions to them by states and individuals. A China scholar by training and a mathematician at heart, my research agenda combines field interviews, archival materials, and case studies with machine learning, text analysis, and surveys. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate. 
+A native of Michigan, I grew up traversing the Great Lakes. Since then, I have moved on to bigger adventures. Prior to grad school, I trekked across the Pacific Northwest and Canadian Rockies, American Southwest and Northeast, and mainland China. My goal is to one day visit all 56 US national parks.
