@@ -81,4 +81,4 @@ devtools::install_github('EandrewJones/how2scrape', build_vignettes = TRUE)
 ```
 __Note:__ You must include `build_vignettes = TRUE`, otherwise the lab will not work. Also, the package only works in `R version >= 3.5.1`, so please make sure your version of R is updated. If you are still using an outdated version, think of this as a friendly nudge. 
 
-The can take a fairly long time to download and compile. Don't worry, this is normal. The package scrapes ~10k bills from Congress as it compiles, so please be patient. If you run into any issues, please let me know as soon as possible so we can fix the issue before Monday.
+The can take a fairly long time to download and compile. Don't worry, this is normal. The package scrapes ~10k bills from Congress as it compiles, so please be patient. If you run into any issues, please leave me a message via email or on github.
