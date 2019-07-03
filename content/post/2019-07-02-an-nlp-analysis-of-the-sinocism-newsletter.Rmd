@@ -1,0 +1,176 @@
+---
+title: An NLP Analysis of the Sinocism Newsletter
+author: Evan Jones
+date: '2019-07-02'
+slug: an-nlp-analysis-of-the-sinocism-newsletter
+categories: []
+tags: ['China', 'Sino-US Relations', 'news', 'NLP', 'memes', 'AI', 'Cold War 2']
+output:
+image:
+  caption: ''
+  focal_point: ''
+---
+
+Two and a half years ago I subscribed to Bill Bishop's [Sinocism Newsletter](https://sinocism.com/) to aggregate and streamline my news consumption on China and Sino-US relations. I don't regret it. Through Bill's newsletter, I came upon another newsletter, [ChinaAI](https://chinai.substack.com/), which is the work of Jeffrey Ding from the [Future of Humanity Institute](https://www.fhi.ox.ac.uk/) at Oxford. Both are great supplements, but have come at odds with eachother recently. 
+
+In response to the increasingly conflictual trend in US-China relations, Bill's editorializing has taken on a harder, more cynical (the newsletter is not called "Sinocism" for nothing) edge while Jeff has been a voice for moderation. In particular, he has called on the China watching community to do a better job lifting up diverse voices into gatekeeping positions. In that issue, Jeff also made a general call asking someone perform an text analysis of Sinocism to explore trends in general sentiment over time, different meme--e.g. Cold War 2, AI, tech war, etc.--content, and so on.
+
+This post is a response to that call. As a longtime reader of Sinocism, I felt I was in a good position to combine the high-level insights from an NLP with my personal knowledge. Also, it is a neat little data science project. Below I provide a quick overview of my methods and discuss the results. In future posts, I will dig into the `R` and `Python` side of things.
+
+## Approach
+
+To get the emails, I requested them from Google's [Takeout](https://takeout.google.com/u/0/settings/takeout). If you don't know about it, it's a great way to archive data from your account(s). Then I converted them from .mbox format to HTML and parsed away. I broke the text up into three general categories 
+
+1. Introductory Remarks
+2. In-text Commentary
+3. Entire Newsletter
+
+Bill has altered the newsletter's formatting multiple times since its inception. Certain aspects are fixtures like the 'Essential Eight', a set of 8 articles he's rank as most important for the day, and the content categories. Others have changed a fair amount. Of those features that have changed, the most relevant for an NLP analysis is his technique for commenting on the news articles. At first, he explicitly set-off his commentary with a bold "// Comment:" or just "Comment:" and most of this was in-text . Over time he has slowly shifted toward providing commentary/thoughts at the outset (Introductory Remarks) and using in-text commentary more sparingly and implicitly, rendering the latter less traceable with regex or HTML tags. Entire Newsletter is all of the paragraphs including summaries of the news articles and his commentary.
+
+In my unscientific estimate, in-text commentary picks up about 70% Bill's thoughts and 30% news content. The introductory remarks are exclusively Bill's opinions. The entire newsletter content is a decent proxy for trends in China as well as Sino-US relations, a thermometer so to speak, but should not be taken as unbiased. For instance, much of Bill's editorializing is via selection: what makes the cut for inclusion and how much attention does it get? A quick and dirty bag-of-words text analysis as done here won't pick up on these subtleties, but it does provide food for thought.
+
+## Findings
+
+The analysis proceeds from general to specific. I start by exploring the commentary length over time. Then I dig into the most common unigram and bigrams. Afterwards, I briefly look at two memes that are increasingly prevalent in news about China: "artificial intelligence" and a "New Cold War". I conclude with a temporal sentiment analysis using Lexicoder Sentiment Dictionary (Young and Soroka 2012), a canned dictionary that comes with `quanteda`.
+
+### Commentary Length
+
+I first provide a sense of Bill's overall verbosity over time. To do so, I tokenized the texts and took a count, grouping by month and each type of commentary. The figure below plots the results. As you can see, the "executive summary" feature appears in November 2017 and slowly grows in size until May 2018, when it surpasses the in-text commentary in absolute magnitude. 
+
+![](/post/2019-07-02-an-nlp-analysis-of-the-sinocism-newsletter_files/verbosity.png)
+
+
+From my daily reading I can tell you that the in-text commentary continues to grow sparser and Bill more laconic therein. Some of the residual token counts in this category are due to spillover from my roughshod classification approach combined with the fluid nature of his formatting.
+
+Another thing you will notice is that both types of commentary tend to trend together. Some months Bill is simply less verbose and indeed the newsletter feels more like a news aggregator. The correlation between counts are also due to Bill taking a hiatus for different personal events like trips and family deaths.
+
+### Top Words and Phrases
+
+Next, I wanted to get a sense of whether and how the content of each type of commentary aligns closely with the entire text. I did this in two ways. The first way is via a simple count of the top 50 terms by frequency faceted by the three categories. The results are below.
+
+![](/post/2019-07-02-an-nlp-analysis-of-the-sinocism-newsletter_files/term_counts.png)
+
+Unsurprisingly, terms like China, US, Trump, Xi, Beijing, PRC dominate the top 5 slots across all the categories. A quick scan of the in-text commentary suggests that it has mostly focused on insider knowledge/rumours on the trade talks and the Party Congress/other party meetings. The introductory commentary is almost exclusively dominated by the trade war. 
+
+Only one chinese character, 的 (de) a possesive particle, makes it on the list. If I had utilized a Mandarin dictionary, it probably would have been removed as a stopword. On a side note, an interesting future analysis would be to focus explicitly on the Chinese articles that Bill includes, exploring their content and the top news outlets he taps apart from the obvious *People's Daily*.
+
+While the single tokens might make for a pretty plot, they are not that interesting or informative. So the second way I explored comment-content congruency was to use `spaCy`'s pretrained part-of-speech (POS) tagger and extract the top 50 noun phrases, dropping collateral damage caused by the Mandarin. The figure below presents the findings.
+
+![](/post/2019-07-02-an-nlp-analysis-of-the-sinocism-newsletter_files/phrase_counts.png)
+
+The top 5-10 phrases closely mirror the results from the unigram approach, but slightly more proper names and place making the cut, e.g. Wang Qishan, Guo Wengui, Liu He, etc. Moving down the list, things become more interesting. Even though overall counts tend to drop off, we can start to see a separation in what issues Bill pays attention to vis-a-vis the overall content. 
+
+Looking at the entire newsletter, we see the phrases are well-distributed across multiple topics. For instance, local_government is probably a result of the PRC's focus on addressing local government debt issues that was especially pronounced throughout 2017, but has taken a backseat to the trade war. Lower on the list are phrases like  national_security, a political staple; artificial_intelligence which is increasing in the spotlight; foreign_investment, a sticking-point in the trade talks; peking_university which has undergone some significant changes in leadership and seen a few scandals; new_zealand, where news on China's United Front activities and influence has been in the spotlight; discipline_inspection a la Xi's corruption campaign; and environmental_protection, a nagging problem in China.
+ 
+Moving to the in-text comentary, we see Bill's focus centers more on high-level Chinese party officials and Tigers, the Trump administration and its members, and "insider knowledge. In a sense, these comments aim to provide deeper context and Bill's personal read on the private dealings of both governments. Phrases such as 'another_reminder' and 'another_sign' usually precede clauses like 'of Xi's increasing consolidation of power' and 'that neither side is likely to make any concessions soon.' The tailored nature of this commentary is intuitive given that it is often in response to one or more news specific news articles.
+
+Finishing with the introductory remarks, three topics dominate apart from administrativia: the trade war, US-DPRK nuclear negotiations, and Sino-US technology competition. The first and third topics could be nested under a broader topic of Sino-US competition. Bill and many in the Beltway have framed these two issues as part and parcel of a 'New Cold War' (Elsewhere, I dubbed this meme 'Cold War 2' or CW2 for short). However, I think they are worthy of a distinction. Bill usually conveys his personal opinion on trends in each of these areas and occasionally offers with some predictions or things to look out for on the horizon.
+
+### Memes
+
+News articles often reduce coverage of tech advances--especially in areas like machine and deep learning, cloud computing, UAVs, and the hardware necessary to power these algorithm--to an 'artificial intelligence' catch-all phrase. Typical coverage of the tech industry in China is no exception. Thus, despite important nuances across these areas, I employ just this term as a proxy for the broader AI meme as conceived of in the media. CW2 allusions tend to be slightly more nuanced, sometimes not referencing the term 'Cold War' at all. I therefore represent the CW2 meme with the phrases 'cold war,' 'containment,' 'tech war,' and 'arms race.' I then used [glob](https://en.wikipedia.org/wiki/Glob_(programming)) wildcard matching to trace the presence of these memes in each issue of the newsletter.
+
+![](/post/2019-07-02-an-nlp-analysis-of-the-sinocism-newsletter_files/memes.png)
+
+Juxtaposing the two types of commentary with the entire newsletter, one immediate result stands out. Although it feels as though Bill has increasingly employed Cold War-esque frames in his commentary, this appear not to be the case. The last time the topic appears in September 2018. One conjecture is that the CW2 frame that I feel has been making an increasing appearance in the newsletter is primarily via the news articles Bill chooses to feature rather than explicit allusions. Another, more plausible, conjecture is that my hasty parsing of the text coupled with an under-defined set of terms caused me to miss more recent appearances of the CW2 meme in his liner notes.
+
+The second result is the rapid growth in the CW2 meme within the general media since the end of 2017. While AI has been a fixture in coverage of China, CW2 is a relatively newer beast. I consider Campbell and Ratner's "The China Reckoning" piece in Foreign Affairs to be one of the defining events that touched off the so-called "China Consensus" in Congress and among a growing number of elites. The plot confers some descriptive legitimacy to my hypothesis. In the two months prior to this piece CW2 appears 10 times in the newsletter, and 17 times in the two months after. I am not implying a causal relationship here, but rather arguing that we can treat this publication as a useful historical marker for the structural shift in Sino-Us relations.
+
+### Emotional Sentiment
+
+Ideally, I would write a custom dictionary tailored to Sinocism, but I haven't the time for that. As an alternative, I use `quanteda`'s canned sentiment dictionary. While I am generally skeptical of the validity of a sentiment analysis, especially when using a canned dictionary, it can provide some exploratory utility. Below I plot the Positive-Negative ratio, or valence, of the newsletter over time. The difference is normalized by the total number of tokens in each category per issue. Again, I demarcate the Campbell and Ratner piece date.
+
+![](/post/2019-07-02-an-nlp-analysis-of-the-sinocism-newsletter_files/sentiment_ratio.png)
+
+Based on this dictionary, the entire newsletter often sits in the 2-5 percent negative valence range, with occasional positive spikes. The in-text commenatary is even more negative, with some issues dropping below 20 percent negative, though the commentary does appear to have more positive content than the entire newsletter and the introductory remarks. I did more into this below. The intro remarks display a similar negative lean. 
+
+Does this tell us anything we don't already know? Not really. Bill named his newsletter Sinocism as a play on cynicism.. And, as an interlocutor in the DoD aptly said to me today, "[our relations] went from cooperating for cooperation’s sake to where we are now, competing for competition’s sake." I'd be surprised if the relative valences looked any different.
+
+The one finding that stands out is how much the in-text valence vacillates in recent months and the sheer number of positive issues. To look into this further, I randomly sample four issues from after December 2018, two of which are negative on-balance and two which are positive. Let's take a look.
+
+</br>
+<div style="border: 0px solid #ddd; padding: 5px; overflow-y: scroll; height:500px; "><table class="table table-condensed table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<tbody>
+  <tr grouplength="9"><td colspan="2" style="background-color: #00BFC4; color: #fff;"><strong>Positive</strong></td></tr>
+<tr>
+   <td style="text-align:left;width: 35%; font-weight: bold; padding-left: 2em;" indentlevel="1"> 2019-05-06 </td>
+   <td style="text-align:left;width: 35%; font-weight: bold;"> 2019-06-19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 35%;  padding-left: 2em;" indentlevel="1"> It takes a while for the propaganda department to get its orders, especially after a holiday and a weekend www.pbc.gov.cn/goutongjiaoliu/113456/113469/3820253/index.html ).&quot;All the funds will be loaned to private and small companies,&quot; the statement said... </td>
+   <td style="text-align:left;width: 35%; "> And we have the annual liquidity pressures around June 30 coming up as well. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 35%;  padding-left: 2em;" indentlevel="1"> The market has become increasingly concerned with potential policy tightening since mid-April, after a central bank monetary policy committee meeting and a gathering of the Politburo, the group of the ruling Communist Party's 25 top leaders, both indicated a &quot;neutralization&quot; of the monetary policy stance, economists with investment bank China International Capital Corp. said in a note. </td>
+   <td style="text-align:left;width: 35%; "> Could be a very stressful 12 days in the banking system Zhao Kezhi, minister of public security wrote a long op-ed on People's Daily, urging the police troops to stay &quot;absolute loyal&quot; to Xi Jinping. &quot; </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 35%;  padding-left: 2em;" indentlevel="1"> However, &quot;the RRR cut this morning has eased these concerns. </td>
+   <td style="text-align:left;width: 35%; "> On this fundamental issue relevant to our flag, our direction, and our path, our mind must be very clear, our position must be very firm, and our attitude must be very clear-cut.&quot; </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 35%;  padding-left: 2em;" indentlevel="1"> It is clear that the overall monetary policy stance is unlikely to revert to a 'de facto' tightening mode we experience in 1H2018,&quot; they wrote. </td>
+   <td style="text-align:left;width: 35%; "> He also talked about how the police must work hard to safeguard the CCP regime, and &quot;severely crackdown all kinds of infiltration and subversion activities, violent and terrorist activities and radical religious activities&quot;. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 35%;  padding-left: 2em;" indentlevel="1"> In a note this morning Capital Economics wrote that &quot;The PBOC is requiring that all lending funded by the cut go to small and private firms. </td>
+   <td style="text-align:left;width: 35%; "> 郭声琨表示，在以习近平同志为核心的党中央坚强领导下，在习近平新时代中国特色社会主义思想指引下，中国创造了经济持续健康发展、社会持续安全稳定&quot;两大奇迹&quot;。中国愿与世界各国分享安全治理的经验，也愿与各方携手应对各种问题和挑战。我们应更加严厉地打击恐怖主义，坚决维护人类社会的安全底线；更加有效地维护网络安全，共同守护清朗健康的网络空间；更加深入地打击跨国犯罪，努力保护各国人民的安全和福祉。 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 35%;  padding-left: 2em;" indentlevel="1"> Our calculations suggest that the net RMB280bn liquidity injection can be used to expand bank lending by RMB3500bn, enough to boost the stock of outstanding loans to small firms by 10% and overall bank loans by 5%.&quot; </td>
+   <td style="text-align:left;width: 35%; "> I thought CCTV anchors were banned from making private appearances? </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 35%;  padding-left: 2em;" indentlevel="1"> Airbnb also in the news in China because of the discovery of a hidden camera in a Qingdao listing. </td>
+   <td style="text-align:left;width: 35%; ">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 35%;  padding-left: 2em;" indentlevel="1"> Airbnb has apologized - Airbnb致歉青岛民宿装摄像头：永久撤出涉事房源 Abridged translation of latest Caixin cover story 海南去地产化风暴 新建海景房被推倒 By the US embassy in the new embassy district. </td>
+   <td style="text-align:left;width: 35%; ">  </td>
+  </tr>
+  <tr grouplength="8"><td colspan="2" style="background-color: #F8766D; color: #fff;"><strong>Negative</strong></td></tr>
+<tr>
+   <td style="text-align:left;width: 35%; font-weight: bold; padding-left: 2em;" indentlevel="1"> This deployed all over Beijing or just around embassies? </td>
+   <td style="text-align:left;width: 35%; font-weight: bold;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 35%;  padding-left: 2em;" indentlevel="1"> It must be much harder for foreign intel services in operate in China now, and I doubt Chen Guangcheng could have been brought into the US embassy now </td>
+   <td style="text-align:left;width: 35%; ">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 35%;  padding-left: 2em;" indentlevel="1"> 2019-03-04 </td>
+   <td style="text-align:left;width: 35%; "> 2019-03-26 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 35%;  padding-left: 2em;" indentlevel="1"> Xiang Songzuo is the economist who claimed in December that 2018 GDP growth was actually 67% or lower There may not be much new in Xi's message </td>
+   <td style="text-align:left;width: 35%; "> And this may be the ultimate irony of the pressure on China: If it agrees to everything the US wants it may ultimately strengthen the PRC economy and make it an even richer and more formidable competitor to the US A sign of the times. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 35%;  padding-left: 2em;" indentlevel="1"> but it is a useful reiteration of his views toward the cultural and social science sectors, and another sign that there is little reason to expect any near-term loosening in information controls, and many reasons to expect them to tighten... </td>
+   <td style="text-align:left;width: 35%; "> Anyone know who is funding it? </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 35%;  padding-left: 2em;" indentlevel="1"> Obviously no coincidence with the timing of this official report, just days after Canada rules the Meng Wanzhou extradition process will proceed. </td>
+   <td style="text-align:left;width: 35%; "> More conformation to Xi that he can believe nothing anyone in the US government other than Trump tells him </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 35%;  padding-left: 2em;" indentlevel="1"> I know Xi is comfortable with contradictions but the circumstances around detention of these two makes it hard to trust the promises of better treatment for foreign investors and foreigners... </td>
+   <td style="text-align:left;width: 35%; ">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 35%;  padding-left: 2em;" indentlevel="1"> Blatant </td>
+   <td style="text-align:left;width: 35%; ">  </td>
+  </tr>
+</tbody>
+</table></div>
+</br>
+
+These samples lend further credence to my skepticism of using a canned dictionary. The sentences from the relatively positive samples do not evince positivity. If anything, there seems to be a fair amount of cynicism throughout the May 6, 2019 newsletter while Chinese propaganda is peppered about the June 19, 2019 newsletter which is probably driving the relative positive valence. A sample size of 2 is not nearly large enough to be representative, but given my prior knowledge of the poor data cleaning combined with the samples, I'm confident the sentiment analysis is mainly noise. 
+
+## Conclusion
+
+The text analysis did not uncover anything counter-intuitive to long time readers of Sinocism. For the unacquainted, the results provide a good window into Sino-Us relations over the past couple years and Bill's editorial priorities. The most intriguing finding, in my view, is that mentions of the CW2 and AI memes are extremely scant in the commentary, despite their consistence prevalence in the news. This does not conform to my intuition gained by reading the newsletter daily. Either my perception of the newsletter is biased or the bulk of Bill's editorializing is structural, as opposed to verbal, in nature. The reality is likely some combination of both these factors.
+
+I normally adhere to an open data policy, but the newsletter is behind a paywall. I don't think Bill would be happy about me sharing 2.5 years of archived issues. If anyone is interested in doing their own analysis, contact me and we'll see if we can work out a data format that protects Bill's intellectual property. Let's avoid forced IP transfer accusations...
+
+In coming weeks, I will walk through my code for this post step-by-step, breaking it into multiple installments. If anyone has specific requests for some type of NLP or otherwise they would like to see done on this data, let me know. I'll do my best to work it in.

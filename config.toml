@@ -13,7 +13,7 @@ title = "Evan Jones"
 
 # Your copyright notice - appears in site footer.
 # To display a copyright symbol, type `&copy;`.
-copyright = "&copy; 2018 Evan Jones"
+copyright = "&copy; 2019 Evan Jones"
 
 theme = "hugo-academic"
 enableEmoji = true
@@ -183,7 +183,7 @@ enableGitInfo = false
 
   # Link custom CSS and JS assets
   #   (relative to /static/css and /static/js respectively)
-  custom_css = []
+  custom_css = ['styles']
   custom_js  = []
 
   # Publication types.
@@ -268,6 +268,11 @@ enableGitInfo = false
     link = "https://scholar.google.com/citations?user=Rvq-bmwAAAAJ&hl=en"
 
   [[params.social]]
+    icon = "twitter"
+    icon_pack = "fab"
+    link = "https://twitter.com/EandrewJones"
+    
+  [[params.social]]
     icon = "github"
     icon_pack = "fab"
     link = "https://github.com/EandrewJones"
@@ -312,10 +317,10 @@ enableGitInfo = false
   url = "#talks"
   weight = 5
   
-#[[menu.main]]
-#  name = "Blog"
-#  url = "#posts"
-#  weight = 6
+[[menu.main]]
+  name = "Blog"
+  url = "#posts"
+  weight = 6
 
 
 
