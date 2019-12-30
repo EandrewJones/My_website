@@ -20,6 +20,10 @@ weight = 5
 [[education.courses]]
   course = "PhD in Government and Politics (in Progress)"
   institution = "University of Maryland"
+  
+[[education.courses]]
+  course = "Academic Year Program (in Progress)"
+  institution = "International Chinese Language Program, National Taiwan University"
 
 [[education.courses]]
   course = "BA in International Relations"
