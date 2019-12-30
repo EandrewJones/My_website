@@ -1,6 +1,6 @@
 +++
 # Project title.
-title = "Accommodation in the Shadow of Hierarchy"
+title = "Money, Morals, or Might?"
 subtitle = "Explaining which Countries Welcome China’s Rise"
 
 # Date this page was created.
@@ -27,18 +27,19 @@ external_link = ""
   focal_point = "Center"
 +++
 
-*Working Paper with Scott Kastner*
+*with Scott Kastner. Under Review.*
 
-{{% staticref "files/who_acommodates_EJ_SK_Oct2018.pdf" "newtab" %}}PDF{{% /staticref %}} 
+{{% staticref "files/MoneyMoralsMight.pdf" "newtab" %}}PDF{{% /staticref %}} 
 
 ## Abstract
 
-Across the globe, states vary greatly in their willingness to accommodate China’s interests. How can we explain this variation? Recent studies look to economic dependence theories for answers, but the conclusions of these studies are mixed. We argue that states’ accommodative postures are contingent on the nature of the issue at stake, as well as the position of a particular country within different dimensions of the contemporary US-led global order. 
+Across the globe, states vary greatly in the degree to which they are willing to support a rising China's interests. How can we explain this variation? Recent studies look to economic dependence theories for answers, but the conclusions of these studies are mixed. We argue that states’ accommodative postures are likely to be contingent on the position of a particular country within the contemporary US-led global order. 
 
-When China's interests challenge established liberal norms, countries that are more marginalized in the liberal political order are likely to support China. When China's interests directly threaten US military interests, states' position in the US security hierarchy shapes their response. When states are marginalized in the global economic order, they are more likely to be accommodating across a range of issue areas.  
+We follow others in characterizing the contemporary order as multi-dimensional, focusing in particular on a liberal political development dimension, a liberal economic dimension, and a US-led security hierarchy as being central features of the current global order. We hypothesize that countries more marginalized from different dimensions of the current order will be more likely to welcome the rise of a new power (like China) that might challenge established norms, and we further predict that a country marginalized from a particular dimension of order will be especially likely to support China in cases where Chinese behavior directly challenges the norms associated with that dimension of order. 
 
-Employing novel measures of the liberal political order, economic order and US security hierarchy, we test our hypotheses on a data set of countries' responses to China's 2005 Anti-Secession Law, the 2008 crackdown in Tibet, and the 2016 South China Sea UN Tribunal. Our findings indicate that while integration into the liberal world order strongly and consistently predicts who accommodates China, a state's position in the US security hierarchy performs less well.
+Employing novel measures of different dimensions of contemporary order, we test this expectation on a data set of countries' willingness to support China's 2005 Anti-Secession Law, its 2008 crackdown in Tibet, its position on the 2016 South China Sea UN Tribunal, and its recent policies in Xinjiang. Our findings indicate that while integration into the liberal political development order strongly and consistently predicts who accommodates China, the other dimensions of order are weaker predictors of state behavior.
 
 ## Tentative Results
 
-{{< figure src="scs_plots.png" title="<strong>Predicted Probability of Supporting China's Position in 2016 UN Tribunal.</strong> Based on country's satisfaction with current economic situation (left) and position in international Liberal Order (right)." >}}
+{{< figure src="main_coef_plot.png" title="<strong>Logistic Regression Point Estimates.</strong>" >}}
+{{< figure src="roc_plot.png" title="<strong>Xinjiang Repression Classification Test ROC Plot.</strong>" >}}
