@@ -60,10 +60,10 @@ Findings confirm my expectation that salient projects which improve economic wel
 
 ## Results
 
-{{< figure src="econ_flow_te.png" title="<strong>Effect of Exposure on Aid Efficacy Attitudes---By Flow Class</strong>" >}}
+{{< figure src="econ_flow_te.png" width="500px" height="auto" title="<strong>Effect of Exposure on Aid Efficacy Attitudes---By Flow Class</strong>" >}}
 
-{{< figure src="econ_intent_te.png" title="<strong>Effect of Exposure on Aid Efficacy Attitudes---By Donor Intent</strong>" >}}
+{{< figure src="econ_intent_te.png" width="500px" height="auto" title="<strong>Effect of Exposure on Aid Efficacy Attitudes---By Donor Intent</strong>" >}}
 
-{{< figure src="role_flow_te.png" title="<strong>Effect of Exposure on Valence Towards China's Role in Country---By Flow Class.</strong>" >}}
+{{< figure src="role_flow_te.png" width="500px" height="auto" title="<strong>Effect of Exposure on Valence Towards China's Role in Country---By Flow Class.</strong>" >}}
 
-{{< figure src="role_intent_te.png" title="<strong>Effect of Exposure on Valence Towards China's Role in Country---By Donor Intent</strong>" >}}
+{{< figure src="role_intent_te.png" width="500px" height="auto" title="<strong>Effect of Exposure on Valence Towards China's Role in Country---By Donor Intent</strong>" >}}
