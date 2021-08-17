@@ -13,24 +13,7 @@ time_end = 2020-10-01T17:15:00
 authors = ["Evan Jones"]
 
 # Abstract and optional shortened version.
-abstract = "In this talk, I teach the essentials of web scraping via a custom-built R package, <i>how2scrape</i>, available from my github. I introduces some of the basic packages and tools available in the R language for web scraping and interfacing with APIs. Particular attention is paid to understanding the structure of websites and how they operate so that participants feel comfortable extrapolating beyond the presented examples to their own use cases.
-
-The entire workshop is bundled into my R package, *how2scrape*. Below are the instructions for how to install it and follow along with the workshop. I plan to update the package in the future, extending coverage to include crawling with *RSelenium*. There's a possibility I'll create a similar tutorial for crawling with Python too. Any updates will be posted to my blog.
-
-__Instructions for the workshop:__
-
-We will be conducting the web scraping workshop in R. To be able to follow along and get the most out of the session, some preparation is in order.
-
-First, download and install the CSS [selector gadget](https://selectorgadget.com/) plug-in if you do not already have it. This nifty tool is a tremendous aid when web scraping, especially for beginners who are not familiar with javascript, html, and xml/xpath. 
-
-Second, I have bundled the entire workshop into an R package. Please download it from my github repository. To do so, run the following code in R:
-```r
-install.packages('devtools')
-devtools::install_github('EandrewJones/how2scrape', build_vignettes = TRUE)
-```
-__Note:__ You must include `build_vignettes = TRUE`, otherwise the lab will not work. If asked to update any packages, please select none. Also, the package only works in `R version >= 3.5.1`, so please make sure your version of R is updated. If you are still using an outdated version, think of this as a friendly nudge. 
-
-The can take a fairly long time to download and compile. Don't worry, this is normal. The package scrapes ~10k bills from Congress as it compiles, so please be patient. If you run into any issues, please leave me a message via email or on github.
+abstract = "In this talk, I teach the essentials of web scraping via a custom-built R package, *how2scrape*, available from my github. I introduce some of the basic packages and tools available in the R language for web scraping and interfacing with APIs. Particular attention is paid to understanding the structure of websites and how they operate so that participants feel comfortable extrapolating beyond the presented examples to their own use cases.
 "
 abstract_short = ""
 
