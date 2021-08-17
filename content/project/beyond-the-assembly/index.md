@@ -11,7 +11,7 @@ summary = "Conventional approaches to estimating latent preferences are constrai
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = ["multidimensional scaling", "Bayesian non-parametrics", "international organizations"]
+tags = ["multidimensional-scaling", "Bayesian-non-parametrics", "international-organizations"]
 
 # Optional external URL for project (replaces project detail page).
 external_link = ""
