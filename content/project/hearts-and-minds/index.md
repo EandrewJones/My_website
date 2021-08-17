@@ -47,7 +47,7 @@ url_code = ""
 
 *Working Paper*
 
-{{% staticref "files/Jones_heartsminds_exposure.pdf" "newtab" %}}PDF{{% /staticref %}} | {{% staticref "files/Jones_heartsminds_pres.html" "newtab" %}}Slides (old version){{% /staticref %}}
+{{% staticref "files/Jones_heartsminds_exposure.pdf" "newtab" %}}PDF{{% /staticref %}} | {{% staticref "files/Jones_HeartsandMinds_ISA2021.pdf" "newtab" %}}Slides{{% /staticref %}}
 
 ## Abstract
 
