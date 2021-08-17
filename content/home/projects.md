@@ -56,5 +56,18 @@ filter_default = 0
   name = "IR"
   tag = "international-relations"
 
+[[filter]]
+  name = "Multidimensional Scaling"
+  tag = "multidimensional-scaling"
+
+
+[[filter]]
+  name = "IO"
+  tag = "international-organizations"
+  
+
+[[filter]]
+  name = "Bayesian Nonparametrics"
+  tag = "Bayesian-non-parametrics"
 +++
 
