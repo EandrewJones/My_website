@@ -13,8 +13,7 @@ time_end = 2020-10-01T17:15:00
 authors = ["Evan Jones"]
 
 # Abstract and optional shortened version.
-abstract = "In this talk, I teach the essentials of web scraping via a custom-built R package, *how2scrape*, available from my github. I introduce some of the basic packages and tools available in the R language for web scraping and interfacing with APIs. Particular attention is paid to understanding the structure of websites and how they operate so that participants feel comfortable extrapolating beyond the presented examples to their own use cases.
-"
+abstract = "In this talk, I teach the essentials of web scraping via a custom-built R package, *how2scrape*, available from my github. I introduce some of the basic packages and tools available in the R language for web scraping and interfacing with APIs. Particular attention is paid to understanding the structure of websites and how they operate so that participants feel comfortable extrapolating beyond the presented examples to their own use cases. Instructions for installing the package are available [here](https://github.com/gsa-gvpt/gvpt-methods/blob/master/webscraping/README.md)."
 abstract_short = ""
 
 # Name of event and optional event URL.
