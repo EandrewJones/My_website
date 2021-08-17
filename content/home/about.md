@@ -22,7 +22,7 @@ weight = 5
   institution = "University of Maryland"
   
 [[education.courses]]
-  course = "Academic Year Program (in Progress)"
+  course = "Academic Year Program"
   institution = "International Chinese Language Program, National Taiwan University"
 
 [[education.courses]]

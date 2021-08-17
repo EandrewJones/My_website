@@ -13,7 +13,7 @@ title = "Evan Jones"
 
 # Your copyright notice - appears in site footer.
 # To display a copyright symbol, type `&copy;`.
-copyright = "&copy; 2019 Evan Jones"
+copyright = "&copy; 2021 Evan Jones"
 
 theme = "hugo-academic"
 enableEmoji = true
@@ -57,7 +57,7 @@ enableGitInfo = false
 
   # Organizations/Affiliations.
   #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
-  organizations = [ { name = "University of Maryland", url = "https://gvpt.umd.edu/" } ]
+  organizations = [ { name = "University of Maryland", url = "https://gvpt.umd.edu/" }, {name = "Applied Research Lab for Intelligence and Security", url = "https://www.arlis.umd.edu/"} ]
 
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
   avatar = "portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
@@ -119,7 +119,7 @@ enableGitInfo = false
   sharing_image = ""
 
   # Twitter username (without @). Used when a vistor shares your site on Twitter.
-  twitter = ""
+  twitter = "EandrewJones"
 
   # Diplay a logo in navigation bar rather than title (optional).
   #   To enable, place an image in `static/img/` and reference its filename below. To disable, set the value to "".
@@ -170,8 +170,8 @@ enableGitInfo = false
   #   For more info on the highlighting options, see:
   #   https://sourcethemes.com/academic/docs/writing-markdown-latex/#highlighting-options
   highlight = true
-  highlight_languages = ["R", "Python"]
-  highlight_style = "github"
+  highlight_languages = ["R", "Python", "cpp", "c", "javascript"]
+  highlight_style = "github-gist"
 
   # Enable native social sharing buttons?
   sharing = true
@@ -284,6 +284,7 @@ enableGitInfo = false
      icon_pack = "ai"
      link = "files/cv.pdf"
 
+
 # Navigation Links
 #   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
 #     desired widget in your `content/home/` folder.
@@ -298,30 +299,34 @@ enableGitInfo = false
   weight = 1
   
 [[menu.main]]
+  name = "Experience"
+  url = "#experience"
+  weight = 2
+  
+[[menu.main]]
   name = "My Research"
   url = "#research"
-  weight = 2
+  weight = 3
 
 [[menu.main]]
   name = "Publications"
   url = "#publications"
-  weight = 3
+  weight = 4
 
 [[menu.main]]
   name = "Projects"
   url = "#projects"
-  weight = 4
+  weight = 5
   
 [[menu.main]]
   name = "Talks"
   url = "#talks"
-  weight = 5
+  weight = 6
   
 [[menu.main]]
   name = "Blog"
   url = "#posts"
-  weight = 6
-
+  weight = 7
 
 
 # Search.
