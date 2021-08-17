@@ -41,33 +41,31 @@ filter_default = 0
   tag = "*"
 
 [[filter]]
-  name = "China"
-  tag = "China"
-  
-[[filter]]
   name = "Africa"
   tag = "Africa"
 
 [[filter]]
+  name = "Bayesian"
+  tag = "Bayesian"
+
+[[filter]]
+  name = "China"
+  tag = "China"
+
+[[filter]]
   name = "Foreign Aid"
   tag = "foreign aid"
-  
-[[filter]]
-  name = "IR"
-  tag = "international-relations"
 
 [[filter]]
   name = "Multidimensional Scaling"
   tag = "multidimensional-scaling"
 
-
 [[filter]]
   name = "IO"
   tag = "international-organizations"
-  
 
 [[filter]]
-  name = "Bayesian"
-  tag = "Bayesian"
+  name = "IR"
+  tag = "international-relations"
 +++
 

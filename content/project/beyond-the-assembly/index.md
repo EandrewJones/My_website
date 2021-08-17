@@ -47,7 +47,7 @@ url_code = ""
 
 *Working Paper*
 
-{{% staticref "files/beyond-the-assembly-paper.pdf" "newtab" %}}PDF{{% /staticref %}} | {{% staticref "files/BeyondTheAssembly_Presentation_Jones.pdf" "newtab" %}}Slides (old version){{% /staticref %}}
+{{% staticref "files/beyond-the-assembly-paper.pdf" "newtab" %}}PDF{{% /staticref %}} | {{% staticref "files/BeyondTheAssembly_Presentation_Jones.pdf" "newtab" %}}Slides{{% /staticref %}}
 
 ## Abstract
 
