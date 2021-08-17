@@ -11,7 +11,7 @@ summary = "One facet of China’s foreign economic activities at the center of s
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = ["foreign aid", "China", "Africa"]
+tags = ["foreign aid", "China", "Africa", "international-relations"]
 
 # Optional external URL for project (replaces project detail page).
 external_link = ""
