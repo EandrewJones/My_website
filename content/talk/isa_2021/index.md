@@ -21,7 +21,7 @@ event = "ISA 2021 Annual Convention"
 event_url = "https://www.isanet.org/Conferences/ISA2021"
 
 # Location of event.
-location = "Virtual
+location = "Virtual"
 
 # Is this a selected talk? (true/false)
 selected = true
