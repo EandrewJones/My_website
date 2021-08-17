@@ -60,7 +60,7 @@ anchored to well-established latent constructs.
 
 ## Results
 
-{{< figure src"dims-plot.png" title="<strong>Dimensionality of the 25<sup>th</sup>-72<sup>nd</sup> UN General Assembly.</strong> Points indicate the median posterior number of dimensions mmBPFA found after burn-in. Bars represent 95% HPD intervals. The median number of dimensions across sessions is 3, indicated by the blue dotted-line." >}}
+{{< figure src="dims-plot.png" title="<strong>Dimensionality of the 25<sup>th</sup>-72<sup>nd</sup> UN General Assembly.</strong> Points indicate the median posterior number of dimensions mmBPFA found after burn-in. Bars represent 95% HPD intervals. The median number of dimensions across sessions is 3, indicated by the blue dotted-line." >}}
 
 {{< figure src="sess70-dim-plot.png" title="<strong>Ideal Point-Dimension Scatter Plots for 70<sup>th</sup> Session of UNGA (2015--2016).</strong> (top) Dimension 1 (x-axis) versus Dimension 2 (y-axis). (bottom) Dimension 1 (x-axis) versus Dimension 3 (y-axis)." >}}
 
