@@ -24,7 +24,7 @@ event_url = "https://github.com/EandrewJones/gvpt-methods/tree/master/CI_intro"
 location = "Dept. of Government and Politics, UMD"
 
 # Is this a selected talk? (true/false)
-selected = True
+selected = false
 
 # Projects (optional).
 #   Associate this talk with one or more of your projects.
