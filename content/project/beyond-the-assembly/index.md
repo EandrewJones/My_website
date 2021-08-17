@@ -7,11 +7,11 @@ subtitle = "Estimating Multidimensional Foreign Policy Preferences from Multi-Mo
 date = 2021-08-17T14:49:00
 
 # Project summary to display on homepage.
-summary = "Conventional approaches to estimating latent preferences are constrained not only by the dearth of data from which preferences can be learned, usually roll-call votes, but also by the assumptions and limitations built into the statistical models they use to estimate these preferences. I develop a flexible, non-parametric model that allows researchers to combine multi-modal data, such as speeches and votes, and extract ideal points along as many dimensions as are stably present."
+summary = "I develop a flexible, non-parametric model that allows researchers to combine multi-modal data, such as speeches and votes, and extract ideal points along as many dimensions as are stably present and apply the model to United Nations Voting, Speech, and Period Review Data."
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = ["multidimensional-scaling", "Bayesian-non-parametrics", "international-organizations"]
+tags = ["multidimensional-scaling", "Bayesian", "international-organizations", "international-relations"]
 
 # Optional external URL for project (replaces project detail page).
 external_link = ""

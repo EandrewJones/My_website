@@ -67,7 +67,7 @@ filter_default = 0
   
 
 [[filter]]
-  name = "Bayesian Nonparametrics"
-  tag = "Bayesian-non-parametrics"
+  name = "Bayesian"
+  tag = "Bayesian"
 +++
 
