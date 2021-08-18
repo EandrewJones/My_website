@@ -53,11 +53,11 @@ enableGitInfo = false
 
   # Your details.
   name = "Evan Jones"
-  role = "PhD Student in Government & Politics"
+  role = "Political Science PhD Student"
 
   # Organizations/Affiliations.
   #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
-  organizations = [ { name = "University of Maryland", url = "https://gvpt.umd.edu/" }, {name = "Applied Research Lab for Intelligence and Security", url = "https://www.arlis.umd.edu/"} ]
+  organizations = [ { name = "Dept. of Government and Politics, University of Maryland", url = "https://gvpt.umd.edu/" }, {name = "Applied Research Lab for Intelligence and Security", url = "https://www.arlis.umd.edu/"} ]
 
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
   avatar = "portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
