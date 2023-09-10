@@ -10,7 +10,7 @@ weight = 5
 # List your academic interests.
 [interests]
   interests = [
-    "Cats, Trail running, and AI Software Engineering"
+    "Cats, Trail Running, and AI Software Engineering",
     "Chinese and East Asian Affairs",
     "Politics of Misinformation",
     "International Political Economy",
