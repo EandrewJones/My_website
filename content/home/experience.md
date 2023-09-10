@@ -19,7 +19,7 @@ date_format = "January 2006"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
-  title = "Research Engineer"
+  title = "Software Engineer"
   company = "Applied Research Lab for Intelligence and Security"
   company_url = "https://www.arlis.umd.edu/"
   location = "Maryland"
@@ -39,9 +39,9 @@ date_format = "January 2006"
   company_url = "https://www.gvpt.umd.edu"
   location = "Maryland"
   date_start = "2020-12-15"
-  date_end = ""
+  date_end = "2022-08-01"
   description = """
-  Working with Prof. Kathleen Cunningham
+  Working with Prof. Kathleen and David Cunningham
   
   Responsibilities include:
   
